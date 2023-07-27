@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Application</title>
+  <!-- Add the link preload for es-module-shims here -->
+  <link rel="modulepreload" href="/assets/es-module-shims.min.js" as="script">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

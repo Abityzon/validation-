@@ -1,0 +1,40 @@
+<h1>Create a new person</h1>
+<%= form_with model: @person do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br />
+  <br />
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+  <br />
+  <br />
+
+  <%= form.label :age %>
+  <%= form.number_field :age %>
+  <br />
+  <br />
+
+  <%= form.label :gender %>
+  <%= form.collection_radio_buttons :gender, [['male', 'Male'], ['female', 'Female']], :first, :last %>
+  <br />
+  <br />
+
+  <%= form.label :favorite_color %>
+  <%= form.text_field :favorite_color %>
+  <br />
+  <br />
+
+  <%= form.submit "Submit" %>
+<% end %>
+
+<% if @person.errors.any? %>
+  <div class="errors">
+    <h2>Errors:</h2>
+    <ul>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
